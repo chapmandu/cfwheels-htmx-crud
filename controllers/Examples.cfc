@@ -2,7 +2,6 @@ component extends="Controller" output=false {
 
 	public void function config() {
 		super.config();
-		protectsFromForgery();
 		filters(through = "findOne", only = "show,edit,update,delete");
 	}
 
