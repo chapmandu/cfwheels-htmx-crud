@@ -6,6 +6,7 @@ component extends="wheels.migrator.Migration" hint="create examples table" {
 				t = createTable(name = 'examples');
 				t.string(columnNames='name', default='', null=false, limit='255');
 				t.string(columnNames='type', default='', null=true, limit='255');
+				t.timestamps();
 				t.create();
 			} catch (any e) {
 				local.exception = e;
