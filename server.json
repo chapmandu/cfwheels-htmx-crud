@@ -1,0 +1,16 @@
+{
+    "name":"cfwheels-htmx-crud",
+    "force":true,
+    "web":{
+        "http":{
+            "host":"localhost"
+        },
+        "rewrites":{
+            "enable":true,
+            "config":"urlrewrite.xml"
+        }
+    },
+    "app":{
+        "cfengine":"lucee"
+    }
+}
