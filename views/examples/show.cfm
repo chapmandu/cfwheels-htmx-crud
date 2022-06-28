@@ -1,22 +1,24 @@
 <cfoutput>
 	#includePartial("/shared/header")#
 
-	<dl class="dl-horizontal">
-		<dt>id</dt><dd>#example.key()#</dd>
-		<dt>name</dt><dd>#example.name#</dd>
-		<dt>type</dt><dd>#example.type#</dd>
+	<dl>
+		<dt>ID:</dt><dd>#example.key()#</dd>
+		<dt>Name:</dt><dd>#example.name#</dd>
+		<dt>Type:</dt><dd>#example.type#</dd>
+		<dt>Created:</dt><dd>#timeAgoInWords(example.createdAt)#</dd>
 	</dl>
-	#linkTo(
+
+	#buttonTag(
 		"hx-get" = UrlFor(route = "Examples"),
 		"hx-target" = "##htmx-container",
 		"hx-push-url" = true,
-		text = "Back"
+		content = "Back"
 	)#
-	#linkTo(
+	#buttonTag(
 		"hx-get" = UrlFor(route = "editExample", key = example.key()),
 		"hx-target" = "##htmx-container",
 		"hx-push-url" = true,
-		text = "Edit"
+		content = "Edit"
 	)#
 	#buttonTo(
 		"hx-delete" = UrlFor(route = "Example", key = example.key()),

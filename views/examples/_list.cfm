@@ -1,11 +1,16 @@
 <cfoutput>
-	#linkTo(
+	#buttonTag(
 		"hx-get" = URLFor(route = "newExample"),
 		"hx-target" = "##htmx-container",
 		"hx-push-url" = true,
-		text = "New Example"
+		content = "New Example"
 	)#
 	<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Type</th>
+		</tr>
 		<cfloop query="examples">
 			<tr>
 				<td>#examples.id#</td>

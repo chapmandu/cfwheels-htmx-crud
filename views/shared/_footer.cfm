@@ -1,6 +1,6 @@
 <cfoutput>
 	<cfif !isHTMXRequest()>
-		</div>
+		</main>
 		<br>
 	</cfif>
 </cfoutput>

@@ -1,6 +1,6 @@
 <cfoutput>
 	<cfif !isHTMXRequest()>
-		<div id="htmx-container" style = "border:1px solid silver;">
+		<main id="htmx-container">
 	</cfif>
 	#flashMessages()#
 </cfoutput>
