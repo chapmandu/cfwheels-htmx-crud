@@ -43,6 +43,7 @@ component extends="Controller" output=false {
 	public any function create() {
 		example = model("Example").new(params.example);
 		if (example.save()) {
+			cfheader(name = "HX-Push", value = URLFor(route = "Example", key = example.key()));
 			flashInsert(message = "The example has been saved.", messageType = "success");
 			return renderView(action = "show");
 		} else {
