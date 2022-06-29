@@ -30,7 +30,6 @@ component extends="Controller" output=false {
 	// CRUD
 
 	public void function index() {
-		writeDump(var="here", label="here");
 	}
 
 	public void function show() {
