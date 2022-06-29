@@ -6,24 +6,28 @@
 		content = "New Example"
 	)#
 	<table>
-		<tr>
-			<th>ID</th>
-			<th>Name</th>
-			<th>Type</th>
-		</tr>
-		<cfloop query="examples">
+		<thead>
 			<tr>
-				<td>#examples.id#</td>
-				<td>
-					#linkTo(
-						"hx-get" = URLFor(route = "Example", key = examples.id),
-						"hx-target" = "##htmx-container",
-						"hx-push-url" = true,
-						text = examples.name
-					)#
-				</td>
-				<td>#examples.type#</td>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Type</th>
 			</tr>
-		</cfloop>
+		</thead>
+		<tbody>
+			<cfloop query="examples">
+				<tr>
+					<td>#examples.id#</td>
+					<td>
+						#linkTo(
+							"hx-get" = URLFor(route = "Example", key = examples.id),
+							"hx-target" = "##htmx-container",
+							"hx-push-url" = true,
+							text = examples.name
+						)#
+					</td>
+					<td>#examples.type#</td>
+				</tr>
+			</cfloop>
+		</tbody>
 	</table>
 </cfoutput>
