@@ -1,6 +1,6 @@
 <cfoutput>
 	#includePartial("/shared/header")#
-	#errorMessagesFor("example")#
+	#errorMessagesFor(objectName = "example", class = "bad color")#
 	#startFormTag(
 		"hx-put" = UrlFor(route = "Example", key = example.key()),
 		"hx-target" = "##htmx-container"

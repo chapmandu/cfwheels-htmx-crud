@@ -12,19 +12,22 @@
 		"hx-get" = UrlFor(route = "Examples"),
 		"hx-target" = "##htmx-container",
 		"hx-push-url" = true,
-		content = "Back"
+		content = "Back",
+		class = "float<"
 	)#
 	#buttonTag(
 		"hx-get" = UrlFor(route = "editExample", key = example.key()),
 		"hx-target" = "##htmx-container",
 		"hx-push-url" = true,
-		content = "Edit"
+		content = "Edit",
+		class = "float<"
 	)#
 	#buttonTo(
 		"hx-delete" = UrlFor(route = "Example", key = example.key()),
 		"hx-target" = "##htmx-container",
 		"hx-confirm" = "Are you sure?",
-		text = "Delete"
+		text = "Delete",
+		class = "float<"
 	)#
 	#includePartial("/shared/footer")#
 </cfoutput>

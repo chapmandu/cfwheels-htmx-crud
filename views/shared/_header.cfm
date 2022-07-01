@@ -2,5 +2,7 @@
 	<cfif !isHTMXRequest()>
 		<main id="htmx-container">
 	</cfif>
-	#flashMessages()#
+	<cfloop collection="#flash()#" item="flashKey">
+		<p class="#LCase(flashKey)# bg">#flash(flashKey)#</p>
+	</cfloop>
 </cfoutput>

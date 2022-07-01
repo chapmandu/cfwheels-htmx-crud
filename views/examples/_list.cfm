@@ -5,7 +5,7 @@
 		"hx-push-url" = true,
 		content = "New Example"
 	)#
-	<table>
+	<table class="table">
 		<thead>
 			<tr>
 				<th>ID</th>

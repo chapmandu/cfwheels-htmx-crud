@@ -8,4 +8,5 @@
 set(dataSourceName="example");
 // set(dataSourceUserName="");
 // set(dataSourcePassword="");
+set(showDebugInformation = false);
 </cfscript>

@@ -1,21 +1,27 @@
-<!--- Place HTML here that should be used as the default layout of your application. --->
 <html>
-	<head>
-		<title>CFWheels CRUD + HTMX</title>
-		<cfoutput>#csrfMetaTags()#</cfoutput>
-		<script src="https://unpkg.com/htmx.org@1.7.0"></script>
-		<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-	</head>
-	<body>
-		<cfoutput>
-		<header>
-			<h1>Examples</h1>
-			<p>A bare bones example of a #linkTo(text = "CFWheels", href = "https://cfwheels.org")# CRUD app using #linkTo(text = "HTMX", href = "https://htmx.org")#.</p>
-		</header>
+	<cfoutput>
+		<head>
+			<title>CFWheels + HTMX + missing.css</title>
+			#csrfMetaTags()#
+			#javaScriptIncludeTag("https://unpkg.com/htmx.org@1.7.0")#
+			#styleSheetLinkTag("https://the.missing.style,custom")#
+		</head>
+		<body>
+			<header>
+				<h2>Examples</h2>
+				<p class="box">
+					A gathering of
+					#linkTo(text = "CFWheels", href = "https://cfwheels.org")#,
+					#linkTo(text = "HTMX", href = "https://htmx.org")# and
+					#linkTo(text = "missing.css", href = "https://missing.style/")#
+					in a bare-bones CRUD application.
+				</p>
+			</header>
 			#includeContent()#
-		<footer>
-			"Built" by #linkTo(text = "chapmandu", href = "https://github.com/chapmandu")#
-		</footer>
-		</cfoutput>
-	</body>
+			<footer>
+				"Built" by #linkTo(text = "chapmandu", href = "https://github.com/chapmandu")#
+				<chip class="float>">0% Javascript</chip>
+			</footer>
+		</body>
+	</cfoutput>
 </html>
