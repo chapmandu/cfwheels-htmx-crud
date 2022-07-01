@@ -1,5 +1,7 @@
 # cfwheels-htmx-crud
 
-This is a bare bones example of a [CFWheels](https://www.cfwheels.org) CRUD app using [htmx](https://www.htmx.org)
+A gathering of [CFWheels](https://www.cfwheels.org), [HTMX](https://www.htmx.org) and [missing.css](https://missing.style/) in a bare-bones CRUD application.
 
-![image](https://user-images.githubusercontent.com/1092563/176326581-11c318e4-4992-4fa3-afb6-f61113497184.png)
+Prepare to be ~~appalled~~ dazzled!
+
+![image](https://user-images.githubusercontent.com/1092563/176860817-9928c78e-136d-4613-a0bf-2983cffc8044.png)
