@@ -3,8 +3,7 @@
 	#errorMessagesFor("example")#
 	#startFormTag(
 		"hx-put" = UrlFor(route = "Example", key = example.key()),
-		"hx-target" = "##htmx-container",
-		"hx-push-url" = true
+		"hx-target" = "##htmx-container"
 	)#
 		#includePartial("fields")#
 		#buttonTag(

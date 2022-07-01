@@ -24,7 +24,6 @@
 		"hx-delete" = UrlFor(route = "Example", key = example.key()),
 		"hx-target" = "##htmx-container",
 		"hx-confirm" = "Are you sure?",
-		"hx-push-url" = UrlFor(route = "Examples"),
 		text = "Delete"
 	)#
 	#includePartial("/shared/footer")#

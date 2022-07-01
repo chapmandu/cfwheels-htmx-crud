@@ -42,12 +42,13 @@ component extends="Controller" output=false {
 	public any function create() {
 		example = model("Example").new(params.example);
 		if (example.save()) {
-			cfheader(name = "HX-Push", value = URLFor(route = "Example", key = example.key()));
-			flashInsert(message = "The example has been saved.", messageType = "success");
-			return renderView(action = "show");
+			return this.respond(
+				message = "#example.name# has been saved.", messageType = "success",
+				push = {route = "Example", key = example.key()},
+				action = "show"
+			);
 		} else {
-			flashInsert(message = "There was a problem creating the example.", messageType = "error");
-			return renderView(action = "new");
+			return this.respond(message = "There was a problem creating the example.", messageType = "error", action = "new");
 		}
 	}
 
@@ -56,19 +57,49 @@ component extends="Controller" output=false {
 
 	public any function update() {
 		if (example.update(params.example)) {
-			flashInsert(message = "The example has been saved.", messageType = "success");
-			return renderView(action = "show");
+			return this.respond(
+				message = "#example.name# has been saved.", messageType = "success",
+				push = {route = "Example", key = example.key()},
+				action = "show"
+			);
 		} else {
-			flashInsert(message = "There was a problem updating this Example.", messageType = "error");
-			return renderView(action = "edit");
+			return this.respond(message = "There was a problem updating #example.name#.", messageType = "error", action = "edit");
 		}
 	}
 
 	public any function delete() {
-		if (!example.delete()) {
-			flashInsert(message = "There was a problem deleting this Example.", messageType = "error");
+		if (example.delete()) {
+			this.respond(
+				message = "#example.name# has been deleted.", messageType = "error",
+				action = "index",
+				push = {route = "Examples"}
+			);
+		} else {
+			this.respond(message = "There was a problem deleting this example.", messageType = "error", action = "index");
 		}
-		return renderView(action = "index");
+	}
+
+	// PRIVATE
+
+	/**
+	 * Responds to a HTMX request.. experimental!
+	 */
+	private any function respond(
+		string action = "",
+		string message = "",
+		string messageType = "success",
+		struct push = {},
+		struct redirect = {} // TODO
+	) {
+		if (Len(arguments.message)) {
+			flashInsert(message = arguments.message, messageType = arguments.messageType);
+		}
+		if (!StructIsEmpty(arguments.push)) {
+			cfheader(name = "HX-Push", value = URLFor(argumentCollection = arguments.push));
+		}
+		if (Len(arguments.action)) {
+			return renderView(action = arguments.action);
+		}
 	}
 
 }
