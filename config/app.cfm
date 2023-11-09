@@ -8,6 +8,5 @@
 this.datasources['example'] = {
   class: 'org.h2.Driver'
 , connectionString: 'jdbc:h2:file:#GetDirectoryFromPath(GetBaseTemplatePath())#db/h2/example;MODE=MySQL'
-, username = 'sa'
 };
 </cfscript>

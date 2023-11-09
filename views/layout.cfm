@@ -3,8 +3,8 @@
 		<head>
 			<title>CFWheels + HTMX + missing.css</title>
 			#csrfMetaTags()#
-			#javaScriptIncludeTag("https://unpkg.com/htmx.org@1.7.0")#
-			#styleSheetLinkTag("https://the.missing.style,custom")#
+			#javaScriptIncludeTag("https://unpkg.com/htmx.org@1.9.8")#
+			#styleSheetLinkTag("https://unpkg.com/missing.css@1.1.1")#
 		</head>
 		<body>
 			<header>
@@ -17,7 +17,10 @@
 					in a bare-bones CRUD application.
 				</p>
 			</header>
-			#includeContent()#
+			<main id="htmx-container">
+				#includeContent()#
+			</main>
+			<br>
 			<footer>
 				"Built" by #linkTo(text = "chapmandu", href = "https://github.com/chapmandu")#
 				<chip class="float>">0% Javascript</chip>

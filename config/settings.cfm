@@ -8,5 +8,6 @@
 set(dataSourceName="example");
 // set(dataSourceUserName="");
 // set(dataSourcePassword="");
+set(autoMigrateDatabase = true);
 set(showDebugInformation = false);
 </cfscript>

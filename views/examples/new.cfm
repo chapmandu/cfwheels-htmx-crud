@@ -1,5 +1,5 @@
 <cfoutput>
-	#includePartial("/shared/header")#
+	#includePartial("/messages")#
 	#errorMessagesFor(objectName = "example", class = "bad color")#
 	#startFormTag(
 		"hx-post" = UrlFor(route = "Examples"),
@@ -14,5 +14,4 @@
 		)#
 		#buttonTag(content = "Save")#
 	#endFormTag()#
-	#includePartial("/shared/footer")#
 </cfoutput>

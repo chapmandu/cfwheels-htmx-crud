@@ -22,20 +22,11 @@ component extends="wheels.Controller" {
 
 	function config() {
 		protectsFromForgery();
-		usesLayout("setLayout");
+		filters(through = "beforeRequest");
 	}
 
-	private string function setLayout() {
-		if (isHTMXRequest()) {
-			return false;
-		}
-	}
-
-	/**
-	 * Returns true if a request has the htmx header present
-	 */
-	public boolean function isHTMXRequest() {
-		return StructKeyExists(GetHTTPRequestData().headers, "HX-Request");
+	private void function beforeRequest() {
+		request.isHTMX = StructKeyExists(GetHTTPRequestData().headers, "HX-Request");
 	}
 
 }

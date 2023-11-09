@@ -5,6 +5,6 @@
   </p>
 	<p>
 		<label>Type</label><br>
-		#select(objectName = "example", property = "type", options = options, label = "")#
+		#select(objectName = "example", property = "type", options = arguments.options, label = "")#
   </p>
 </cfoutput>

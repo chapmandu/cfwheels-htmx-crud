@@ -1,5 +1,5 @@
 <cfoutput>
-	#includePartial("/shared/header")#
+	#includePartial("/messages")#
 
 	<dl>
 		<dt>ID:</dt><dd>#example.key()#</dd>
@@ -29,5 +29,4 @@
 		text = "Delete",
 		class = "float<"
 	)#
-	#includePartial("/shared/footer")#
 </cfoutput>

@@ -11,6 +11,9 @@
         }
     },
     "app":{
-        "cfengine":"lucee"
+        "cfengine":"lucee@5"
+    },
+    "env":{
+        "LUCEE_EXTENSIONS":"465E1E35-2425-4F4E-8B3FAB638BD7280A;version=2.1.214.0001L"
     }
 }
